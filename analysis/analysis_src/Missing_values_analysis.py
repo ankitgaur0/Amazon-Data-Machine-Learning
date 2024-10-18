@@ -59,7 +59,7 @@ class Missing_values(Missingvalues_analysis_Template):
     def identify_missing_values(self, df: pd.DataFrame):
         # print the missing values with respect to the giving data.
         print("the missing values are : \n")
-        df.isnull().sum()
+        print(df.isnull().sum())
 
         print("*"*60)
 

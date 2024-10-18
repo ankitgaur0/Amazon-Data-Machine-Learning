@@ -69,6 +69,21 @@ class Statistical_Info_Strategy(Basic_Insights_analyze_Strategies):
         print("Statistical summary for categorical columns/features ")
         print(df.describe(include="O"))
 
+#Concrete class that defines another Strategy named as Corelatioin_Strategy of base class Basic_Insights_analyze_Strategies.
+# This class must defines a method names as initiate_analysis()
+# This method will be used as find the corelation between the float and boolean data.
+class Corelation_Strategy(Basic_Insights_analyze_Strategies):
+    def __init__(self):
+        super().__init__()
+
+    def initiate_analysis(self, df: pandas.DataFrame):
+        #print the corelation between the data 
+        # use the pearson : standard correlation coefficient value between(-1 to 1)
+        print("*"*60)
+        print("Include only float, int or boolean data.")
+        print(df.corr())
+        print("*"*60)
+
 
 #Context class of abstract class name Basic_Insights_analyze_Strategies
 # This class must implement a method name called as set_strategy for set the desired strategies of Basic_Insights_analyze_Strategies
